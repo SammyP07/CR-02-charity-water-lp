@@ -26,7 +26,7 @@ Fonts:
 /* Set up the main font and background color for the whole page */
 body {
   background-color: #f4f8fb; /* Soft light blue for a fresh look */
-  font-family: 'Avenir', 'Proxima Nova', Arial, sans-serif;
+  font-family: 'Proxima Nova', 'Avenir', Arial, sans-serif; /* Changed order to prioritize Proxima Nova */
   margin: 0;
   padding: 0;
   color: #222;
@@ -45,7 +45,7 @@ section {
 .hero {
   position: relative; /* Needed for overlay */
   /* Set a background image that covers the whole section */
-  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80');
+  background-image: url('img/Hero2.jpg');
   background-size: cover;      /* Make the image cover the whole area */
   background-position: center; /* Center the image */
   background-repeat: no-repeat;
@@ -78,17 +78,56 @@ section {
 
 /* Story Section Styles */
 .story {
-  background-color: #8BD1CB; /* Secondary Light Blue */
-  color: #222;
-  text-align: center;
+  background-color: #2E9DF7; /* Changed from #8BD1CB (teal) to primary blue */
+  color: #FFC907; /* Changed from #222 to yellow for contrast against blue background */
+  text-align: left; /* Changed from center to left */
   padding: 30px 20px;
+  position: relative; /* Needed to position the logo absolutely within the section */
+  font-family: 'Proxima Nova', 'Avenir', Arial, sans-serif; /* Set Proxima Nova for story section */
+  font-size: 1.2em; /* Make text larger - increased from default size */
 }
 
 /* Add accent color to section headings */
 h2 {
-  color: #2E9DF7; /* Primary blue */
+  color: #FFC907; /* Changed from #2E9DF7 (blue) to yellow */
   margin-top: 0;
   font-weight: bold;
+  position: relative; /* Needed to position the logo */
+  font-size: 2.2em; /* Make heading larger - increased from default */
+  font-family: 'Proxima Nova', 'Avenir', Arial, sans-serif; /* Set Proxima Nova for headings */
+}
+
+/* Style the paragraph text in story section to be offset to the right */
+.story p {
+  margin-left: 80px; /* Increased from 40px to move paragraph text further right */
+}
+
+/* Style for the second hero image in the story section */
+.hero2-image {
+  width: 200px; /* Set a good size for the image */
+  height: auto; /* Keep aspect ratio */
+  border-radius: 10px; /* Round the corners */
+  position: absolute; /* Position it absolutely within the story section */
+  right: 150px; /* Move left from right edge to be between text and logo */
+  top: 60%; /* Position below the heading */
+  transform: translateY(-50%); /* Adjust for vertical centering */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Add shadow for depth */
+}
+
+/* Style for charity: water logo next to h2 */
+.logo-container {
+  display: flex;
+  align-items: center; /* Center the logo with the text */
+  gap: 15px; /* Space between text and logo */
+}
+
+/* Position the logo at bottom right of the text content */
+.cw-logo {
+  width: 120px; /* Made bigger - increased from 60px */
+  height: auto; /* Keep aspect ratio */
+  position: absolute; /* Position it absolutely within the story section */
+  bottom: 20px; /* Move to bottom with some padding */
+  right: 20px; /* Keep at far right edge */
 }
 
 /* Call-to-Action Section Styles */
@@ -102,10 +141,12 @@ h2 {
 /* Style the impact story image */
 .impact-image {
   width: 100%;
-  max-width: 320px;
+  max-width: 480px; /* Increased from 320px to make image bigger */
   border-radius: 10px;
   margin-bottom: 16px;
   box-shadow: 0 2px 8px rgba(46, 157, 247, 0.10);
+  /* Set the source of the impact image */
+  content: url('img/Mada.jpg');
 }
 
 /* Donate Button Styles */
@@ -185,14 +226,14 @@ section {
   .impact-content {
     display: flex;           /* Place items in a row */
     align-items: center;     /* Vertically center items */
-    justify-content: center; /* Center the whole group */
+    justify-content: flex-start; /* Changed from center to flex-start to align left */
     gap: 28px;               /* Space between image and text */
     text-align: left;
     max-width: 800px;
-    margin: 0 auto;
+    margin-left: 0;          /* Remove auto centering and align to left */
   }
 
   .impact-image {
-    width: 300px;
+    width: 450px; /* Increased from 300px to make image wider on larger screens */
   }
 }
